@@ -1,3 +1,20 @@
 @import "./reset.css";
 @import "./common.css";
 @import "./wiki-layout.css";
+
+
+#about,
+#gallery,
+#works,
+#info,
+#til {
+    scroll-margin-top: 56px;
+}
+
+#til-form {
+    margin-top: 16px;
+}
+
+#til-list {
+    margin-top: 16px;
+}

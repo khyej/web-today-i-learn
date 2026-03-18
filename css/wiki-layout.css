@@ -103,6 +103,34 @@ main {
   margin-bottom: 24px;
 }
 
+.content-section a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #24292f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  transition: background-color 0.2s;
+}
+
+.content-section a::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png");
+  background-size: cover;
+  filter: invert(1);
+}
+
+.content-section a:hover {
+  background-color: #444d56;
+}
+
 /* 갤러리 그리드 */
 .gallery-grid {
   display: grid;
@@ -126,6 +154,7 @@ main {
 
 .work-card {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 20px;
   border-radius: 8px;
@@ -133,11 +162,9 @@ main {
 }
 
 .work-thumbnail {
-  width: 140px;
-  height: 180px;
+  width: 100%;
   background-color: #ddd;
   border-radius: 4px;
-  flex-shrink: 0;
   overflow: hidden;
 }
 
@@ -354,7 +381,6 @@ footer {
 .work-card iframe,
 .work-card video {
   width: 100%;
-  max-width: 480px;
   aspect-ratio: 16 / 9;
   border: none;
   border-radius: 4px;
