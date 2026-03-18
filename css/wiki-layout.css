@@ -1,7 +1,27 @@
+/* 변수 */
+:root {
+  --primary-color: #41431B;
+  --primary-light: #AEB784;
+  --primary-pale: #E3DBBB;
+  --primary-bg: #F8F3E1;
+  --nav-bg-color: #41431B;
+  --hero-bg-color: #E3DBBB;
+  --card-bg-color: #E3DBBB;
+  --til-border-color: #41431B;
+  --body-bg-color: #F8F3E1;
+  --divider-color: #AEB784;
+  --font-default-color: #41431B;
+  --font-muted-color: #7a7a50;
+  --font-light-color: #F8F3E1;
+  --font-nav-color: #E3DBBB;
+}
+
 /* 상단 내비게이션 */
 .top-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,7 +35,7 @@
 .nav-logo {
   font-family: "Jua", serif;
   font-size: 1.4rem;
-  color: var(--primary-color);
+  color: var(--font-light-color);
 }
 
 .nav-links {
@@ -26,13 +46,13 @@
 
 .nav-links a {
   text-decoration: none;
-  color: var(--font-default-color);
+  color: var(--font-nav-color);
   font-size: 0.9rem;
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: var(--primary-light);
 }
 
 /* 프로필 히어로 */
@@ -41,6 +61,8 @@
   justify-content: center;
   padding: 64px 32px;
   background-color: var(--hero-bg-color);
+  width: calc(100vw);
+  margin-left: calc(-50vw + 50%);
 }
 
 .profile-card {
@@ -54,7 +76,7 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: var(--divider-color);
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -71,7 +93,7 @@
 }
 
 .profile-info .tagline {
-  color: #777;
+  color: var(--font-muted-color);
   line-height: 1.6;
 }
 
@@ -98,18 +120,19 @@ main {
 
 .content-section > p,
 .section-desc {
-  color: #666;
+  color: var(--font-muted-color);
   line-height: 1.8;
   margin-bottom: 24px;
 }
 
+/* GitHub 링크 버튼 */
 .github-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background-color: #24292f;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--font-light-color);
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -128,7 +151,7 @@ main {
 }
 
 .github-link:hover {
-  background-color: #444d56;
+  background-color: var(--primary-light);
 }
 
 /* 갤러리 그리드 */
@@ -155,7 +178,6 @@ main {
   margin: 0;
 }
 
-
 .work-card {
   display: flex;
   flex-direction: row;
@@ -169,7 +191,7 @@ main {
 .work-thumbnail {
   width: 55%;
   aspect-ratio: 16 / 9;
-  background-color: #ddd;
+  background-color: var(--divider-color);
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
@@ -191,7 +213,7 @@ main {
 }
 
 .work-info p {
-  color: #666;
+  color: var(--font-muted-color);
   line-height: 1.6;
 }
 
@@ -204,93 +226,25 @@ main {
 
 .til-item {
   padding: 20px;
-  border-left: 3px solid var(--primary-color);
-  background-color: var(--card-bg-color);
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--primary-pale);
   border-radius: 0 8px 8px 0;
 }
 
 .til-item time {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .til-item h3 {
   font-size: 1.1rem;
   margin: 8px 0;
+  color: var(--font-default-color);
 }
 
 .til-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* 방명록 */
-.comment-form-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.comment-form-container input,
-.comment-form-container textarea {
-  padding: 12px;
-  border: 1px solid var(--divider-color);
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 0.95rem;
-}
-
-.comment-form-container textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-.comment-buttons {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.comment-buttons button {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.comment-buttons button[type="button"] {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.comment-buttons button[type="reset"] {
-  background-color: #eee;
-  color: #666;
-}
-
-.comment-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.comment-item {
-  padding: 16px;
-  background-color: var(--card-bg-color);
-  border-radius: 8px;
-}
-
-.comment-item strong {
-  font-size: 0.9rem;
-  color: var(--primary-color);
-}
-
-.comment-item p {
-  margin-top: 6px;
-  color: #555;
+  color: var(--font-default-color);
   line-height: 1.6;
 }
 
@@ -298,7 +252,8 @@ main {
 footer {
   text-align: center;
   padding: 32px;
-  color: #aaa;
+  background-color: var(--primary-color);
+  color: var(--font-nav-color);
   font-size: 0.85rem;
 }
 
@@ -317,13 +272,13 @@ footer {
 
 .info-table th {
   width: 140px;
-  color: #555;
+  color: var(--font-default-color);
   font-weight: 700;
-  background-color: var(--card-bg-color);
+  background-color: var(--primary-pale);
 }
 
 .info-table td {
-  color: #333;
+  color: var(--font-default-color);
 }
 
 /* TIL 작성 폼 */
@@ -333,9 +288,9 @@ footer {
   gap: 14px;
   padding: 24px;
   margin-bottom: 32px;
-  border: 1px solid var(--divider-color);
   border-radius: 8px;
-  background-color: var(--card-bg-color);
+  background-color: var(--hero-bg-color);
+  border: 1px solid var(--primary-color);
 }
 
 .til-form .form-group {
@@ -347,7 +302,7 @@ footer {
 .til-form label {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #555;
+  color: var(--font-muted-color);
 }
 
 .til-form input,
@@ -357,6 +312,8 @@ footer {
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.95rem;
+  background-color: var(--body-bg-color);
+  color: var(--font-default-color);
 }
 
 .til-form textarea {
@@ -380,12 +337,12 @@ footer {
 
 .til-form button[type="submit"] {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--font-light-color);
 }
 
 .til-form button[type="reset"] {
-  background-color: #eee;
-  color: #666;
+  background-color: var(--primary-pale);
+  color: var(--font-default-color);
 }
 
 /* 영상 삽입 */
@@ -395,14 +352,4 @@ footer {
   aspect-ratio: 16 / 9;
   border: none;
   border-radius: 4px;
-}
-
-/* 변수 */
-:root {
-  --primary-color: #4a7c59;
-  --nav-bg-color: #fff;
-  --hero-bg-color: #f8faf8;
-  --card-bg-color: #fafafa;
-  --divider-color: #e8e8e8;
-  --font-default-color: #333;
 }
