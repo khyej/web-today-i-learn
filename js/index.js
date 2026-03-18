@@ -27,10 +27,19 @@ tilForm.addEventListener("submit", function (event) {
 function addTilItem(date, title, content) {
   const tilItem = document.createElement("article");
   tilItem.className = "til-item";
-  tilItem.innerHTML = `
-        <time>${date}</time>
-        <h3>${title}</h3>
-        <p>${content}</p>
-    `;
+
+  const timeEl = document.createElement("time");
+  timeEl.textContent = date;
+
+  const titleEl = document.createElement("h3");
+  titleEl.textContent = title;
+
+  const contentEl = document.createElement("p");
+  contentEl.textContent = content;
+
+  tilItem.appendChild(timeEl);
+  tilItem.appendChild(titleEl);
+  tilItem.appendChild(contentEl);
+
   tilList.appendChild(tilItem);
 }
