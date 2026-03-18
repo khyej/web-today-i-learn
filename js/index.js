@@ -15,11 +15,9 @@ tilForm.addEventListener("submit", function (event) {
   const title = document.querySelector("#til-title").value;
   const content = document.querySelector("#til-content").value;
 
-  // 데이터 저장
   savedTils.push({ date, title, content });
   localStorage.setItem("tils", JSON.stringify(savedTils));
 
-  // 화면 추가 및 리셋
   addTilItem(date, title, content);
   tilForm.reset();
 });
