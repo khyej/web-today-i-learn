@@ -131,13 +131,14 @@ main {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background-color: var(--primary-color);
-  color: var(--font-light-color);
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.9rem;
   margin-top: 12px;
   transition: background-color 0.2s;
+  border: 1px solid var(--divider-color);
 }
 
 .github-link::before {
@@ -145,13 +146,12 @@ main {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-image: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png");
+  background-image: url("https://github.com/favicon.ico");
   background-size: cover;
-  filter: invert(1);
 }
 
 .github-link:hover {
-  background-color: var(--primary-light);
+  background-color: var(--primary-pale);
 }
 
 /* 갤러리 그리드 */
