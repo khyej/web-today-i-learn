@@ -169,7 +169,7 @@ CREATE TABLE crew (
 ```sql
 INSERT INTO crew (crew_id, nickname)
 SELECT DISTINCT crew_id, nickname
-giFROM attendance;
+FROM attendance;
 ```
 
 ### 문제 2: 테이블 컬럼 삭제하기 (ALTER TABLE)
